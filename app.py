@@ -4,9 +4,10 @@ import threading
 from math import floor
 
 app = Flask(__name__)
-global free_status, result_data
+global free_status, result_data, object_pre
 free_status = True
 result_data = 'Wait for the Result'
+
 
 
 
@@ -37,7 +38,7 @@ class Threading:
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    global free_status, result_data
+    global free_status, result_data, object_pre
     result_data = 'Wait for the Result'
     if request.method == 'POST':
         if free_status != True:
@@ -77,7 +78,7 @@ def home():
 
 @app.route('/result', methods=['GET'])
 def result():
-    global result_data
+    global result_data, object_pre
     result_data = object_pre.result()
     print("result_data: ", result_data)
     return render_template('result.html', re_data=result_data)
