@@ -42,23 +42,24 @@ def home():
         else:
             free_status = True
         # Default Values
-        if request.form['CRIM'] == '':
-            data_values = [0.03237, 0.0, 2.18, 0.0, 0.458, 6.998, 45.8, 6.0622, 3.0, 222.0, 18.7, 394.63, 2.94]
-        else:
-            CRIM = float(request.form['CRIM'].strip())
-            ZN = float(request.form['ZN'].strip())
-            INDUS = float(request.form['INDUS'].strip())
-            CHAS = float(request.form['CHAS'].strip())
-            NOX = float(request.form['NOX'].strip())
-            RM = float(request.form['RM'].strip())
-            AGE = float(request.form['AGE'].strip())
-            DIS = float(request.form['DIS'].strip())
-            RAD = float(request.form['RAD'].strip())
-            TAX = float(request.form['TAX'].strip())
-            PTRATIO = float(request.form['PTRATIO'].strip())
-            BK = float(request.form['BK'].strip())
-            LSTAT = float(request.form['LSTAT'].strip())
-            data_values = [CRIM, ZN, INDUS, CHAS, NOX, RM, AGE, DIS, RAD, TAX, PTRATIO, BK, LSTAT]
+
+        age = request.form['age']  # Age of Women
+        marr_rating = request.form['rate_m']  # marriage rating
+        education = request.form['edu_scale']
+        yrr_married = request.form['yom']
+        religious = request.form['R_scale']
+        occ_women = request.form['occ_w']
+        occ_men = request.form['occ_m']
+        children = request.form['children']
+        print("Marriage:", marr_rating)
+        print("age: ", age)
+        print("Education:", education)
+        print("Years Married: ",yrr_married)
+        print("religious: ", religious)
+        print("Occ_women:", occ_women)
+        print("Occ_men:", occ_men)
+        print("Children:", children)
+
         #Threading(object=object_pre, values=data_values)
         return redirect(url_for('result'))
     else:
@@ -69,7 +70,7 @@ def home():
 def result():
     global result_data
     if result_data != 'Processing...':
-        result_data = floor(result_data) * 1000
+        result_data = 0
     print("result_data: ", result_data)
     return render_template('result.html', re_data=result_data)
 

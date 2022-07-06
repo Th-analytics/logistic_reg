@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
-  	<title>Prediction Using Boston Data</title>
+  	<title>Logistic Regression Classifier</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,14 +12,14 @@
 
 	</head>
 	<body>
-	<section class="ftco-section img bg-hero" style="background-image: url(static/images/bg_1.jpg);">
+	<section class="ftco-section img bg-hero" style="background-image: url(static/images/bg_img.jpg);">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section"><b><u>Predict Housing Price</b></u></h2>
-					<p>This Application is based on Linear Regression using Machine Learning.<br>The aim of this application is to predict the
-					price of a house based on the features listed below.<br>For this supervised learning model, I have used Boston Data.
-					<br><b>Skills Demonstrated:</b> Linear Regression, pandas, sklearn, numpy, Supervised Learning, Data Cleaning, Data Modeling, Feature Selection.
+					<h2 class="heading-section"><b><u>Affair Classsifier</b></u></h2>
+					<p>This Application is based on Logistic Regression using Machine Learning.<br>The aim of this application is to predict the
+					Chances of Affair based on the feature listed below.For this supervised learning model, I have used ------ Data.
+					<br><b>Skills Demonstrated:</b> Logistic Regression,Gradient Descent, pandas, sklearn, numpy, Supervised Learning, Data Cleaning, Data Modeling, Feature Selection.
 						<br><u>For More Information do see EDA file and GitHub Link.</u></p>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 				        		</div>
 				        		<div class="text pl-4">
 
-									<a download href="https://drive.google.com/file/d/1Sv68o7-bHMVqLaAWCrOmQUHDs4pSvm1j/view?usp=sharing" target="_blank"><p><span>EDA File: Download</span></p></a>
+									<a download href="https://drive.google.com/file/d/13KXZtR2QeyO6MtcqHDln5IOWLNjdZseb/view?usp=sharing" target="_blank"><p><span>EDA File: Download</span></p></a>
 					          </div>
 				          </div>
 				        	<div class="dbox w-100 d-flex align-items-start">
@@ -85,75 +85,77 @@ LSTAT is % lower status of the population</span>
 							<div class="col-lg-5">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4">Enter The Details</h3>
-									<h4>To give default values press Submit only.</h4>
-									<div id="form-message-warning" class="mb-4"></div> 
-
+									<h4>To give default values press Submit only.</h4> <!--<div id="form-message-warning" class="mb-4"></div>-->
 									<form method="POST" id="data_form" name="data_form">
 										<div class="row">
+											<ul>
 											<div class="col-md-12">
 												<div class="form-group">
+													<li><p><strong>Rate Your Marriage on Scale of (1 = very poor to 5 = very good)</strong></p></li>
+													<input type="radio" name="rate_m" value=1> 1 </input><!--rate_marriage:-->
+													<input type="radio" name="rate_m" value=2> 2 </input>
+													<input type="radio" name="rate_m" value=3> 3 </input>
+													<input type="radio" name="rate_m" value=4> 4 </input>
+													<input type="radio" name="rate_m" value=5> 5 </input>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<li><input type="number" class="form-control" name="age" id="age" placeholder="Age"></li>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<li><input type="number" class="form-control" name="yom" id="yom" placeholder="Years Married"></li>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<li><input type="number" class="form-control" name="children" id="children" placeholder="No of Children"></li>
 
-													<input type="number" step="any" class="form-control" name="CRIM" id="CRIM" placeholder="CRIM(0.00-90.0)">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="ZN" id="ZN" placeholder="ZN(0.00-100.0)">
+													<!--religious: woman's rating of how religious she is (1 = not religious, 4 =strongly religious)-->
+													<li><p><strong>Religious Scale</strong></p></li>
+													<input type="radio" name="R_scale" value=1> 1 </input>
+													<input type="radio" name="R_scale"  value=2> 2 </input>
+													<input type="radio" name="R_scale" value=3> 3 </input>
+													<input type="radio" name="R_scale"  value=4> 4 </input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="INDUS" id="INDUS" placeholder="INDUS(30-0.04)">
+													<li><p><strong>Education</strong></p></li>
+													<input type="radio" name="edu_scale" value=9> Grade School </input>
+													<input type="radio" name="edu_scale" value=12> High school </input>
+													<input type="radio" name="edu_scale" value=14> Some college </input>
+													<input type="radio" name="edu_scale" value=16> College graduate </input>
+													<input type="radio" name="edu_scale" value=17> Some graduate school </input>
+													<input type="radio" name="edu_scale" value=20> Advanced degree </input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="CHAS" id="CHAS" placeholder="CHAS(0-1)">
+													<li><p><strong>Women's Occupation</strong></p></li>
+													<input type="radio" name="occ_w" value=1> Student </input> <br>
+													<input type="radio" name="occ_w" value=2> Farming/semi- skilled/unskilled </input> <br>
+													<input type="radio" name="occ_w" value=3> White Collar </input> <br>
+													<input type="radio" name="occ_w" value=4> Teacher/nurse/writer/technician </input> <br>
+													<input type="radio" name="occ_w" value=5> Managerial/business </input> <br>
+													<input type="radio" name="occ_w" value=6> Professional with advanced degree </input> <br>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="NOX" id="NOX" placeholder="NOX(0.38-0.8)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="RM" id="RM" placeholder="RM(3.0-9)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="AGE" id="AGE" placeholder="AGE(3-100)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="DIS" id="DIS" placeholder="DIS(1-12)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="RAD" id="RAD" placeholder="RAD(1-24)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="TAX" id="TAX" placeholder="TAX(187-711)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="PTRATIO" id="PTRATIO" placeholder="PTRATIO(12.0-22)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="BK" id="BK" placeholder="BK(0-400)">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="number" step="any" class="form-control" name="LSTAT" id="LSTAT" placeholder="LSTAT(1-40)">
+													<li><p><strong>Men's Occupation</strong></p></li>
+													<input type="radio" name="occ_m" value=1> Student </input> <br>
+													<input type="radio" name="occ_m" value=2> Farming/semi- skilled/unskilled </input> <br>
+													<input type="radio" name="occ_m" value=3> White Collar </input> <br>
+													<input type="radio" name="occ_m" value=4> Teacher/nurse/writer/technician </input> <br>
+													<input type="radio" name="occ_m" value=5> Managerial/business </input> <br>
+													<input type="radio" name="occ_m" value=6> Professional with advanced degree </input> <br>
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -162,7 +164,9 @@ LSTAT is % lower status of the population</span>
 													<div class="submitting"></div>
 												</div>
 											</div>
+											</ul>
 										</div>
+
 									</form>
 
 								</div>
