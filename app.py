@@ -39,6 +39,7 @@ class Threading:
 @app.route('/', methods=['POST', 'GET'])
 def home():
     global free_status, result_data, object_pre
+    object_pre = Predict()
     result_data = 'Wait for the Result'
     if request.method == 'POST':
         if free_status != True:
