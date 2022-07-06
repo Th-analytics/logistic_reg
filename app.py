@@ -6,7 +6,8 @@ from math import floor
 app = Flask(__name__)
 global free_status, result_data
 free_status = True
-result_data = 'Processing'
+result_data = 'Wait for the Result'
+
 
 
 class Threading:
@@ -28,7 +29,9 @@ class Threading:
     def run(self):
         global free_status
         free_status = False
-        threading.Thread(target=self.object.main()).start()
+        # rate_marriage,age,yrs_married,child,reli,educ,o_w,o_husb
+        threading.Thread(target=self.object.main(self.rate_m,self.age,self.yrs_marr,self.child_,
+                                                 self.reli_,self.educ_,self.oc_w,self.oc_husb)).start()
         free_status = True
 
 
@@ -59,8 +62,11 @@ def home():
         print("Occ_women:", occ_women)
         print("Occ_men:", occ_men)
         print("Children:", children)
+        # rate_marriage,age,yrs_married,child,reli,educ,o_w,o_husb
+        data_values = [marr_rating, age, yrr_married, children, religious, education, occ_women, occ_men]
+        Threading(object=object_pre, rate_m=marr_rating, age=age, yrs_marr=yrr_married, child_=children, reli_=religious
+                  , educ_=education, oc_w=occ_women, oc_husb=occ_men)
 
-        #Threading(object=object_pre, values=data_values)
         return redirect(url_for('result'))
     else:
         return render_template('index.html')
@@ -69,12 +75,12 @@ def home():
 @app.route('/result', methods=['GET'])
 def result():
     global result_data
-    if result_data != 'Processing...':
-        result_data = 0
-    print("result_data: ", result_data)
+    result_data = object_pre.result()
+    #print("result_data: ", result_data)
     return render_template('result.html', re_data=result_data)
 
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
     object_pre = Predict()
+    app.run(port=8000, debug=True)
+

@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef4974b-6cc6-47c0-bc91-1ac85bdbbd08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/images/bg_img.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model_File/Model.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/Model_File/Model.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bg_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/prediction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
     </list>
@@ -47,13 +47,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Model_File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adity\PycharmProjects\Logistic_regression\Model_File" />
       <recent name="C:\Users\adity\PycharmProjects\Logistic_regression\static\images" />
       <recent name="C:\Users\adity\PycharmProjects\Logistic_regression\eda_file" />
-      <recent name="C:\Users\adity\PycharmProjects\Logistic_regression\Model_File" />
       <recent name="C:\Users\adity\PycharmProjects\Logistic_regression" />
     </key>
   </component>
