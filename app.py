@@ -37,12 +37,13 @@ class Threading:
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    global free_status
-
+    global free_status, result_data
+    result_data = 'Wait for the Result'
     if request.method == 'POST':
         if free_status != True:
             return "Website is Busy"
         else:
+
             free_status = True
         # Default Values
 
@@ -54,6 +55,7 @@ def home():
         occ_women = request.form['occ_w']
         occ_men = request.form['occ_m']
         children = request.form['children']
+        """
         print("Marriage:", marr_rating)
         print("age: ", age)
         print("Education:", education)
@@ -62,6 +64,7 @@ def home():
         print("Occ_women:", occ_women)
         print("Occ_men:", occ_men)
         print("Children:", children)
+        """
         # rate_marriage,age,yrs_married,child,reli,educ,o_w,o_husb
         data_values = [marr_rating, age, yrr_married, children, religious, education, occ_women, occ_men]
         Threading(object=object_pre, rate_m=marr_rating, age=age, yrs_marr=yrr_married, child_=children, reli_=religious
@@ -76,7 +79,7 @@ def home():
 def result():
     global result_data
     result_data = object_pre.result()
-    #print("result_data: ", result_data)
+    print("result_data: ", result_data)
     return render_template('result.html', re_data=result_data)
 
 
